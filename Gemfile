@@ -30,7 +30,6 @@ gem 'spring',        group: :development
 
 group :development do
   gem 'capistrano', '~> 3.1.0'
-  # cap tasks to manage puma application server
   gem 'capistrano-passenger', require: false
   gem 'capistrano-rails',   '~> 1.1', require: false
   gem 'capistrano-bundler', '~> 1.1', require: false

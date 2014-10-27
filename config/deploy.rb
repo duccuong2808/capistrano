@@ -8,12 +8,12 @@ lock '3.2.1'
 set :application, 'capistrano_test'
 set :user, 'ubuntu'
 set :port, 2808
+
 # Define where to put your application code
 set :deploy_to, "/home/ubuntu/apps/capistrano_test"
-set :deploy_via, :copy
+set :deploy_via, :remote_cache
 # set :deploy_via, :remote_cache
 set :use_sudo, false
-
 
 set :scm, :git
 set :repo_url, 'git@github.com:duccuong2808/capistrano.git'

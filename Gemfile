@@ -31,10 +31,11 @@ gem 'spring',        group: :development
 group :development do
   gem 'capistrano', '~> 3.1.0'
   # cap tasks to manage puma application server
-  # gem 'capistrano-passenger', require: false
+  gem 'capistrano-passenger', require: false
   gem 'capistrano-rails',   '~> 1.1', require: false
   gem 'capistrano-bundler', '~> 1.1', require: false
   gem 'capistrano-rvm',   '~> 0.1', require: false
+  gem 'capistrano3-nginx', '~> 2.0'
 end
 
 gem 'unicorn'

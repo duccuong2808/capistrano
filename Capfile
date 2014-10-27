@@ -7,8 +7,8 @@ require 'capistrano/deploy'
 require 'capistrano/rails'
 require 'capistrano/bundler'
 require 'capistrano/rvm'
-# require 'capistrano/passenger'
-
+require 'capistrano/passenger'
+require 'capistrano/nginx'
 # Includes tasks from other gems included in your Gemfile
 #
 # For documentation on these, see for example:

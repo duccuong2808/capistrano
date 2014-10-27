@@ -66,7 +66,11 @@ set :format, :pretty
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-# namespace :deploy do
+namespace :deploy do
+  desc 'Hello World'
+  task :hello do
+    puts 'Hello World'
+  end
 #
 #   desc 'Restart application'
 #   task :restart do
@@ -87,4 +91,4 @@ set :format, :pretty
 #     end
 #   end
 #
-# end
+end

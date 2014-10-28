@@ -29,7 +29,8 @@ set :keep_releases, 5
 set :stage,           :production
 
 set :format, :pretty
-
+set :shared_children, %w{public/uploads}
+after "deploy:restart", "deploy:cleanup"
 # Passenger
 # set :passenger_roles, :app                  # this is default
 # set :passenger_restart_runner, :sequence    # this is default

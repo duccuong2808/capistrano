@@ -27,7 +27,7 @@ gem 'bootstrap-sass'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
-
+gem 'paperclip'
 group :development do
   gem 'capistrano', '~> 3.1.0'
   gem 'capistrano-passenger', require: false

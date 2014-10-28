@@ -18,6 +18,7 @@ set :use_sudo, false
 set :scm, :git
 set :repo_url, 'git@github.com:duccuong2808/capistrano.git'
 set :branch, 'master'
+# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 set :pty, true
 set :ssh_options, { :forward_agent => true }
@@ -26,10 +27,14 @@ set :ssh_options, { :forward_agent => true }
 set :rails_env, 'production'
 
 set :keep_releases, 5
-set :stage,           :production
+set :stage, :production
 
 set :format, :pretty
-set :linked_dirs, %w{public/uploads}
+# set :shared_children, shared_children + %w{public/uploads}
+linked_dirs = Set.new(fetch(:linked_dirs, [])) # https://github.com/capistrano/rails/issues/52
+linked_dirs.merge(%w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/uploads})
+set :linked_dirs, linked_dirs.to_a
+# set :linked_files, %w{config/database.yml config/memcache.yml}
 after "deploy:restart", "deploy:cleanup"
 # Passenger
 # set :passenger_roles, :app                  # this is default

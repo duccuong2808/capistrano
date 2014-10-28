@@ -29,7 +29,7 @@ set :keep_releases, 5
 set :stage,           :production
 
 set :format, :pretty
-set :shared_children, fetch(:shared_children) + %w{public/uploads}
+set :linked_dirs, %w{public/uploads}
 after "deploy:restart", "deploy:cleanup"
 # Passenger
 # set :passenger_roles, :app                  # this is default

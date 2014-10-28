@@ -10,7 +10,7 @@ set :user, 'ubuntu'
 set :port, 2808
 
 # Define where to put your application code
-set :deploy_to, "/home/ubuntu/apps/capistrano_test"
+set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 set :deploy_via, :remote_cache
 # set :deploy_via, :remote_cache
 set :use_sudo, false
